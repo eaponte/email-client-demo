@@ -2,6 +2,8 @@ Web-based Email Client Demo
 
 
 
+- Direct link at https://eaponte.github.io/email-client-demo/
+
 - Using HTML, CSS, and jQuery to demonstrate a simulated web email client
 
 - Demonstrate creating, replying, and forwarding emails
