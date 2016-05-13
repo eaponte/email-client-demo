@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta id="view" name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Email Client Simulation</title>
+
+	<link rel="stylesheet" href="stylesheets/main.css">
+
+</head>
+<body>
+	
+	<nav id="top-nav">
+		
+		<ul>
+			<li id="new-email-btn">New Email</li>
+			<li id="reply-btn">Reply</li>
+			<li id="forward-btn">Forward</li>
+			<li id="close-btn">Close</li>
+		</ul>
+
+	</nav> <!-- end top-nav -->
+
+	<nav id="side-nav">
+
+		<ul>
+			<li id="inbox-link" class="current">Inbox</li>
+			<li id="spam-link">Spam</li>
+			<li id="sent-link">Sent</li>
+			<li id="trash-link">Trash</li>
+		</ul>
+
+	</nav> <!-- end side-nav -->
+
+	<section id="email-section">
+		
+		<ul id="emails">
+
+			<!-- Inbox -->
+
+			<li class="inbox email">
+				<ul class="email-contents">
+					<li class="email-header">
+						<ul>
+							<li class="from"><span>From: </span>Bill</li>
+							<li class="to"><span>To: </span>Ed</li>
+							<li class="subject"><span>Subject: </span>Lorem ipsum dolor sit amet</li>
+							<li class="delete-btn">&times;</li>
+							<li class="undo-btn">&#8630;</li>
+							<li class="date">3-28-2016</li>
+						</ul>
+					</li>
+					<li class="email-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+					</li>
+				</ul>
+			</li>
+			<li class="inbox email">
+				<ul class="email-contents">
+					<li class="email-header">
+						<ul>
+							<li class="from"><span>From: </span>Paul</li>
+							<li class="to"><span>To: </span>Ed</li>
+							<li class="subject"><span>Subject: </span>Lorem ipsum dolor sit amet</li>
+							<li class="delete-btn">&times;</li>
+							<li class="undo-btn">&#8630;</li>
+							<li class="date">3-29-2016</li>
+						</ul>
+					</li>
+					<li class="email-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+					</li>
+				</ul>
+			</li>
+			<li class="inbox email">
+				<ul class="email-contents">
+					<li class="email-header">
+						<ul>
+							<li class="from"><span>From: </span>John</li>
+							<li class="to"><span>To: </span>Ed</li>
+							<li class="subject"><span>Subject: </span>Lorem ipsum dolor sit amet</li>
+							<li class="delete-btn">&times;</li>
+							<li class="undo-btn">&#8630;</li>
+							<li class="date">3-30-2016</li>
+						</ul>
+					</li>
+					<li class="email-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+					</li>
+				</ul>
+			</li>
+
+			<!-- Sent -->
+
+			<li class="sent email">
+				<ul class="email-contents">
+					<li class="email-header">
+						<ul>
+							<li class="from"><span>From: </span>Ed</li>
+							<li class="to"><span>To: </span>Bill</li>
+							<li class="subject"><span>Subject: </span>Lorem ipsum dolor sit amet</li>
+							<li class="delete-btn">&times;</li>
+							<li class="undo-btn">&#8630;</li>
+							<li class="date">4-1-2016</li>
+						</ul>
+					</li>
+					<li class="email-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+					</li>
+				</ul>
+			</li>
+			<li class="sent email">
+				<ul class="email-contents">
+					<li class="email-header">
+						<ul>
+							<li class="from"><span>From: </span>Ed</li>
+							<li class="to"><span>To: </span>Paul</li>
+							<li class="subject"><span>Subject: </span>Lorem ipsum dolor sit amet</li>
+							<li class="delete-btn">&times;</li>
+							<li class="undo-btn">&#8630;</li>
+							<li class="date">4-2-2016</li>
+						</ul>
+					</li>
+					<li class="email-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+					</li>
+				</ul>
+			</li>
+			<li class="sent email">
+				<ul class="email-contents">
+					<li class="email-header">
+						<ul>
+							<li class="from"><span>From: </span>Ed</li>
+							<li class="to"><span>To: </span>John</li>
+							<li class="subject"><span>Subject: </span>Lorem ipsum dolor sit amet</li>
+							<li class="delete-btn">&times;</li>
+							<li class="undo-btn">&#8630;</li>
+							<li class="date">4-3-2016</li>
+						</ul>
+					</li>
+					<li class="email-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+					</li>
+				</ul>
+			</li>
+
+			<!-- Trash -->
+
+			<li class="trash email was-inbox">
+				<ul class="email-contents">
+					<li class="email-header">
+						<ul>
+							<li class="from"><span>From: </span>John</li>
+							<li class="to"><span>To: </span>Ed</li>
+							<li class="subject"><span>Subject: </span>Lorem ipsum dolor sit amet</li>
+							<li class="delete-btn">&times;</li>
+							<li class="undo-btn">&#8630;</li>
+							<li class="date">2-16-2016</li>
+						</ul>
+					</li>
+					<li class="email-body">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id eaque aut provident, temporibus nesciunt magni expedita, velit ad quas blanditiis facere iste voluptate. Delectus nemo animi eum voluptas, sequi quos!</p>
+					</li>
+				</ul>
+			</li>
+
+		</ul> <!-- end emails -->
+
+	</section> <!-- end email-section -->
+
+	<section id="new-email-wrapper">
+		
+		<section id="new-email-modal">
+			
+			<form id="new-email-form">
+
+				<header>
+
+					<h2>New Email</h2>
+
+				</header>
+
+				<section id="form-body">
+
+					<div id="new-email-to">
+
+						<label>To:</label>
+						<input type="email">
+
+					</div>
+
+					<div id="new-email-subject">
+
+						<label>Subject:</label>
+						<input type="text">
+
+					</div>
+
+					<div id="new-email-content">
+
+						<textarea></textarea>
+
+					</div>
+
+					<div id="new-email-modal-buttons">
+
+						<button type="button" id="send-email-btn">Send</button>
+						<button type="reset" id="cancel-email-btn">Cancel</button>
+
+					</div>
+
+				</section> <!-- end form-body -->
+
+			</form>
+
+		</section> <!-- end new-email-modal -->
+
+	</section> <!-- end new-email-wrapper -->
+
+	<section id="reply-email-wrapper">
+		
+		<section id="reply-email-modal">
+			
+			<form id="reply-email-form">
+
+				<header>
+
+					<h2></h2>
+
+				</header>
+
+				<section id="reply-form-body">
+
+					<div id="reply-email-to">
+
+						<label>To:</label>
+						<input type="email">
+
+					</div>
+
+					<div id="reply-email-subject">
+
+						<label>Subject:</label>
+						<input type="text">
+
+					</div>
+
+					<div id="reply-email-content">
+
+						<textarea></textarea>
+
+					</div>
+
+					<div id="reply-email-modal-buttons">
+
+						<button type="button" id="send-reply-email-btn">Send</button>
+						<button type="reset" id="cancel-reply-email-btn">Cancel</button>
+
+					</div>
+
+				</section> <!-- end reply-form-body -->
+
+			</form>
+
+		</section> <!-- end reply-email-modal -->
+
+	</section> <!-- end reply-email-wrapper -->
+
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

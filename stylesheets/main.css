@@ -1,0 +1,349 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	font-family: sans-serif;
+}
+
+html, body {
+	height: 100%;
+}
+
+br {
+	display: block;
+	content:" ";
+	line-height: 16px;
+	margin-top: 16px;
+}
+
+.current {
+	background-color: #CCC;
+}
+
+/********** Top Nav **********/
+
+#top-nav {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 40px;
+	background-color: #1174C3;
+	color: #FFF;
+	padding: 2px 0;
+	z-index: 10;
+}
+
+#top-nav ul {
+	display: inline-block;
+	width: 100%;
+	padding-left: 5%;
+	list-style: none;
+}
+
+#top-nav ul li {
+	display: inline-block;
+	line-height: 28px;
+	padding: 3px;
+	margin: 0 10px;
+	border: 1px solid transparent;
+}
+
+#top-nav ul li:hover {
+	cursor: pointer;
+	border: 1px solid #FFF;
+}
+
+#top-nav #reply-btn, #top-nav #forward-btn, #top-nav #close-btn {
+	display: none;
+}
+
+#top-nav #close-btn {
+	float: right;
+	margin-right: 30px;
+}
+
+/********** Side Nav **********/
+
+#side-nav {
+	position: fixed;
+	left: 0;
+	top: 40px;
+	display: inline-block;
+	width: 10%;
+	min-width: 70px;
+	height: 100%;
+	padding-top: 20px;
+	color: #484848;
+	background-color: #F3F3F3;
+}
+
+#side-nav ul {
+	display: inline-block;
+	width: 100%;
+	list-style: none;
+}
+
+#side-nav ul li {
+	width: 100%;
+	padding: 5px 10px;
+	margin: 5px 0;
+}
+
+#side-nav ul li:hover {
+	cursor: pointer;
+	background-color: #CCC;
+}
+
+/********** Email Folders **********/
+
+.sent, .trash {
+	display: none;
+}
+
+/********** Email Section **********/
+
+#email-section {
+	position: relative;
+	display: inline-block;
+	width: 89%;
+	height: 90%;
+	margin-top: 50px;
+	margin-left: 11%;
+	background-color: #FFF;
+}
+
+#email-section p {
+	margin: 10px 0;
+}
+
+#email-section ul {
+	list-style: none;
+}
+
+.email-contents {
+	margin-bottom: 10px;
+	padding: 0 5px 0 0;
+}
+
+.email-header {
+	line-height: 16px;
+	padding: 7px 5px 5px;
+	margin-bottom: 5px;
+}
+
+.email-header:hover {
+	cursor: pointer;
+	background-color: #CCC;
+}
+
+.email-header li {
+	display: inline-block;
+	white-space: nowrap;
+}
+
+.from, .to {
+	width: 150px;
+	overflow: hidden;
+	margin-right: 10px;
+}
+
+.subject {
+	width: 400px;
+	overflow: hidden;
+	margin-right: 10px;
+}
+
+.date {
+	float: right;
+	margin-right: 20px;
+}
+
+.delete-btn {
+	float: right;
+	padding: 3px;
+	margin-left: 5px;
+	font-size: 20px;
+	color: #F3F3F3;
+	line-height: 13px;
+}
+
+.email-header:hover .delete-btn {
+	color: #E50000;
+}
+
+li.undo-btn {
+	display: none;
+	float: right;
+	padding: 3px;
+	margin-left: 5px;
+	font-size: 20px;
+	color: #F3F3F3;
+	line-height: 13px;
+}
+
+.email-header:hover .undo-btn {
+	color: #1174C3;
+}
+
+.trash .delete-btn {
+	display: none;
+}
+
+.trash .undo-btn {
+	display: inline-block;
+}
+
+.inbox .to, .was-inbox .to {
+	display: none;
+}
+
+.sent .from, .was-sent .from {
+	display: none;
+}
+
+.email-body {
+	display: none;
+	margin-top: 15px;
+	padding: 15px;
+	border-top: 1px solid #CCC;
+}
+
+/********** Opened Email **********/
+
+.open-email {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+}
+
+.open-email .email-header {
+	cursor: default;
+	background-color: #CCC;
+}
+
+.open-email .email-header li {
+	display: block;
+	width: 100%;
+	line-height: 24px;
+}
+
+.open-email .email-body {
+	display: block;
+}
+
+.open-email .date {
+	float: none;
+}
+
+.open-email .email-header .delete-btn, .open-email .email-header .undo-btn {
+	display: none;
+}
+
+/********** New, Reply, Forward Email Modals **********/
+
+#new-email-wrapper, #reply-email-wrapper {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 11;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	text-align: center;
+}
+
+#new-email-wrapper:before, #reply-email-wrapper:before {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+
+#new-email-modal, #reply-email-modal {
+	display: inline-block;
+	width: 80%;
+	height: 80%;
+	vertical-align: middle;
+	text-align: left;
+	background-color: #F4F4F4;
+	overflow: auto;
+}
+
+#new-email-form, #reply-email-form {
+	background-color: #F4F4F4;
+}
+
+#new-email-form header, #reply-email-form header {
+	height: 40px;
+	line-height: 40px;
+	background-color: #1174C3;
+	color: #FFF;
+	padding-left: 10px;
+}
+
+#form-body, #reply-form-body {
+	width: 100%;
+	padding: 10px;
+	color: #484848;
+}
+
+#form-body label, #reply-form-body label {
+	display: inline-block;
+	width: 70px;
+	margin-top: 10px;
+}
+
+#form-body #new-email-content, #reply-form-body #reply-email-content {
+	width: 100%;
+}
+
+#form-body input, #form-body textarea, #reply-form-body input, #reply-form-body textarea {
+	padding: 3px 5px;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+}
+
+#new-email-subject input, #reply-email-subject input {
+	width: 85%;
+}
+
+#form-body textarea, #reply-form-body textarea {
+	width: 85%;
+	height: 300px;
+	margin-top: 10px;
+	margin-left: 75px;
+}
+
+#new-email-modal-buttons, #reply-email-modal-buttons {
+	margin-top: 20px;
+	margin-left: 75px;
+}
+
+#new-email-modal-buttons button, #reply-email-modal-buttons button {
+	border: 0;
+	color: #FFF;
+	padding: 8px;
+	border-radius: 5px;
+}
+
+#new-email-modal-buttons #send-email-btn, #reply-email-modal-buttons #send-reply-email-btn {
+	background-color: #37E163;
+}
+
+#new-email-modal-buttons #send-email-btn:hover, #reply-email-modal-buttons #send-reply-email-btn:hover {
+	background-color: #2BAF4D;
+}
+
+#new-email-modal-buttons #cancel-email-btn, #reply-email-modal-buttons #cancel-reply-email-btn {
+	background-color: #FA6E3E;
+}
+
+#new-email-modal-buttons #cancel-email-btn:hover, #reply-email-modal-buttons #cancel-reply-email-btn:hover {
+	background-color: #C85831;
+}
