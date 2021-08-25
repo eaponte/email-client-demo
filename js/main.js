@@ -46,7 +46,7 @@ $("#spam-link").click(function(){
 
 $("#emails").on("click", ".email-contents", function(e){
 	$(this).addClass("open-email");
-	$("#reply-btn, #forward-btn, #close-btn").css("display", "inline-block");
+	$("#reply-btn, #forward-btn, #close-btn, #delete-btn-top").css("display", "inline-block");
 	$("#new-email-btn").hide();
 });
 
@@ -54,7 +54,7 @@ $("#emails").on("click", ".email-contents", function(e){
 
 function closeOpenEmail(){
 	$(".email-contents").removeClass("open-email");
-	$("#reply-btn, #forward-btn, #close-btn").hide();
+	$("#reply-btn, #forward-btn, #close-btn, #delete-btn-top").hide();
 	$("#new-email-btn").show();
 }
 
@@ -129,6 +129,19 @@ $("#cancel-email-btn").click(function(){
 });
 
 /********** Reply to or Forward an Email **********/
+// Delete email button
+
+$("#delete-btn-top").click(function(e){
+	e.stopPropagation();
+	if ($(".open-email").parents(".email").hasClass("inbox") ) {
+		$(".open-email").parents(".email").hide().addClass("trash was-inbox").removeClass("inbox");
+	}
+	else if ( $(".open-email").parents(".email").hasClass("sent") ) {
+		$(".open-email").parents(".email").hide().addClass("trash was-sent").removeClass("sent");
+	}
+	closeOpenEmail();
+});
+
 
 // Reply email button
 
@@ -163,8 +176,8 @@ $("#send-reply-email-btn").click(function(){
 									'<li class="from"><span>From: </span>Ed</li>' +
 									'<li class="to"><span>To: </span>' + $("#reply-email-to input").val() + '</li>' +
 									'<li class="subject"><span>Subject: </span>' + $("#reply-email-subject input").val() + '</li>' +
-									'<li class="delete-btn">&times;</li>' +
-									'<li class="undo-btn">&#8630;</li>' +
+									'<li class="delete-btn">Delete</li>' +
+									'<li class="undo-btn">Restore</li>' +
 									'<li class="date">' + today + '</li>' +
 								'</ul>' +
 							'</li>' +

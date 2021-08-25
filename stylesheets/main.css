@@ -55,7 +55,7 @@ br {
 	border: 1px solid #FFF;
 }
 
-#top-nav #reply-btn, #top-nav #forward-btn, #top-nav #close-btn {
+#top-nav #reply-btn, #top-nav #forward-btn, #top-nav #close-btn, #top-nav #delete-btn-top {
 	display: none;
 }
 
