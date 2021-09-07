@@ -10,6 +10,9 @@ function currentDate(){
 
 var today = currentDate();
 
+// Default mail-type: "smile"
+var current_mails = "smile";
+
 // Shade the currently clicked folder
 
 $("#side-nav ul li").click(function(){
@@ -47,7 +50,7 @@ $("#spam-link").click(function(){
 $("#emails").on("click", ".email-contents", function(e){
 	$(this).addClass("open-email");
 	$("#reply-btn, #forward-btn, #close-btn, #delete-btn-top").css("display", "inline-block");
-	$("#new-email-btn").hide();
+	$("#new-email-btn, #change-mail-type").hide();
 });
 
 // Close an open email
@@ -55,10 +58,28 @@ $("#emails").on("click", ".email-contents", function(e){
 function closeOpenEmail(){
 	$(".email-contents").removeClass("open-email");
 	$("#reply-btn, #forward-btn, #close-btn, #delete-btn-top").hide();
-	$("#new-email-btn").show();
+	$("#new-email-btn, #change-mail-type").show();
+	if (current_mails == "smile") {
+		$(".smile-email").show();
+		$(".normal-email").hide();
+	}
+	else if (current_mails == "no_smile") {
+		$(".smile-email").hide();
+		$(".normal-email").show();
+	}
 }
 
 $("#close-btn").click(closeOpenEmail);
+
+// Change shown mail-type (mails with or without SMILE)
+$("#change-mail-type").click(function(){
+	if (current_mails == "smile") {
+		current_mails = "no_smile"
+	} else {
+		current_mails = "smile"
+	}
+	closeOpenEmail();
+})
 
 // Delete email button
 
@@ -72,7 +93,7 @@ $("#emails").on("click", ".email .delete-btn", function(e){
 	}
 });
 
-// Undo email from trash button
+// restore email from trash button
 
 $("#emails").on("click", ".email .undo-btn", function(e){
 	e.stopPropagation();
