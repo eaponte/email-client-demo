@@ -52,7 +52,7 @@ $("#spam-link").click(function(){
 $("#emails").on("click", ".email-contents", function(e){
 	$(this).addClass("open-email");
 	$("#reply-btn, #forward-btn, #close-btn, #delete-btn-top").css("display", "inline-block");
-	$("#new-email-btn, #change-mail-type").hide();
+	$("#new-email-btn, #change-mail-type, .current-mail-type").hide();
 });
 
 // Close an open email
@@ -60,7 +60,7 @@ $("#emails").on("click", ".email-contents", function(e){
 function closeOpenEmail(){
 	$(".email-contents").removeClass("open-email");
 	$("#reply-btn, #forward-btn, #close-btn, #delete-btn-top").hide();
-	$("#new-email-btn, #change-mail-type").show();
+	$("#new-email-btn, #change-mail-type, .current-mail-type").show();
 	if (current_mails == "smile") {
 		$(".smile-email").show();
 		$(".normal-email").hide();
@@ -84,7 +84,6 @@ $("#change-mail-type").click(function(){
 	closeOpenEmail();
 	tmp.removeChild(tmp.lastElementChild);
 	$('.top-nav-ul').append('<li class="current-mail-type" style="font-size: 9pt;">'+ current_mails + '</li>');
-
 })
 
 // Delete email button
