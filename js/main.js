@@ -12,6 +12,8 @@ var today = currentDate();
 
 // Default mail-type: "smile"
 var current_mails = "smile";
+$('.top-nav-ul').append('<li class="current-mail-type" style="font-size: 9pt;">'+ current_mails + '</li>');
+
 
 // Shade the currently clicked folder
 
@@ -72,6 +74,7 @@ function closeOpenEmail(){
 $("#close-btn").click(closeOpenEmail);
 
 // Change shown mail-type (mails with or without SMILE)
+let tmp = document.getElementById('top-nav-ul-id');
 $("#change-mail-type").click(function(){
 	if (current_mails == "smile") {
 		current_mails = "no_smile"
@@ -79,6 +82,9 @@ $("#change-mail-type").click(function(){
 		current_mails = "smile"
 	}
 	closeOpenEmail();
+	tmp.removeChild(tmp.lastElementChild);
+	$('.top-nav-ul').append('<li class="current-mail-type" style="font-size: 9pt;">'+ current_mails + '</li>');
+
 })
 
 // Delete email button
