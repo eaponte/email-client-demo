@@ -301,6 +301,20 @@
 </head>
 
 <body onload="closeOpenEmail()" yahoo="fix" class="oma_main_body">
+
+	<script>
+		const options = { year: 'numeric', month: 'short', day: 'numeric' };
+
+		n =  new Date();
+		y = n.getFullYear();
+		m = n.getMonth() + 1;
+		d = n.getDate();
+		document.getElementById("date1").innerHTML = m + "/" + d + "/" + y;
+	</script>
+
+
+
+
 	<nav id="top-nav">
 
 		<ul class="top-nav-ul" id="top-nav-ul-id">
@@ -349,7 +363,7 @@
 								<li class="subject"><span>Betreff: </span>Good Economics for Hard Times</li>
 								<li class="delete-btn">Löschen</li>
 								<li class="undo-btn">Wiederherstellen</li>
-								<li class="date">09. Mai 2021</li>
+								<li class="date"><script> document.write(new Date().toLocaleDateString('de-DE', options)); </script></li>
 							</ul>
 						</li>
 						<li class="email-body">
