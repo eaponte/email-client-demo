@@ -10,9 +10,10 @@ function currentDate(){
 
 var today = currentDate();
 
-// Default mail-type: "smile"
-var current_mails = "smile";
-$('.top-nav-ul').append('<li class="current-mail-type" style="font-size: 9pt;">'+ current_mails + '</li>');
+// Default mail-type: "no_smile"
+var current_mails = "no_smile";
+//Display mail-type in top navigation bar
+//$('.top-nav-ul').append('<li class="current-mail-type" style="font-size: 9pt;">'+ current_mails + '</li>');
 
 
 // Shade the currently clicked folder
