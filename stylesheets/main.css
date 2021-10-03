@@ -206,7 +206,7 @@ li.undo-btn {
 .email-body {
 	display: none;
 	margin-top: 15px;
-	padding: 15px;
+	padding: 0px;
 	border-top: 1px solid #CCC;
 }
 
