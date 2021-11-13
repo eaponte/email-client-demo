@@ -1,8 +1,8 @@
 * {
 	box-sizing: border-box;
 	padding: 0;
-	margin: 0;
-	font-size: 16px;
+	margin: auto;
+	/**********  font-size: 16px; **********/
 	font-family: sans-serif;
 }
 
@@ -13,7 +13,7 @@ html, body {
 br {
 	display: block;
 	content:" ";
-	line-height: 16px;
+	/********** line-height: 16px; **********/
 	margin-top: 16px;
 }
 
@@ -55,7 +55,7 @@ br {
 	border: 1px solid #FFF;
 }
 
-#top-nav #reply-btn, #top-nav #forward-btn, #top-nav #close-btn {
+#top-nav #reply-btn, #top-nav #forward-btn, #top-nav #close-btn, #top-nav #delete-btn-top {
 	display: none;
 }
 
@@ -144,15 +144,34 @@ br {
 }
 
 .from, .to {
-	width: 150px;
-	overflow: hidden;
-	margin-right: 10px;
+	width: auto;
+	overflow: visible;
+	margin-right: 0px;
 }
+.fromMail {
+	width: 0px;
+	display: none;
+	overflow: hidden;
+}
+
+.inlineList {
+	width: 400px;
+	display: inline-flex;
+	flex-direction: row;
+	/* Below sets up your display method: flex-start|flex-end|space-between|space-around */
+	justify-content: flex-start; 
+	/* Below removes bullets and cleans white-space */
+	list-style: none;
+	padding: 0;
+	/* Bonus: forces no word-wrap */
+	white-space: nowrap;
+  }
 
 .subject {
 	width: 400px;
-	overflow: hidden;
+	overflow: visible;
 	margin-right: 10px;
+	margin-left: 0px;
 }
 
 .date {
@@ -206,7 +225,7 @@ li.undo-btn {
 .email-body {
 	display: none;
 	margin-top: 15px;
-	padding: 15px;
+	padding: 0px;
 	border-top: 1px solid #CCC;
 }
 

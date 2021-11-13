@@ -10,6 +10,12 @@ function currentDate(){
 
 var today = currentDate();
 
+// Default mail-type: "no_smile"
+var current_mails = "no_smile";
+//Display mail-type in top navigation bar
+//$('.top-nav-ul').append('<li class="current-mail-type" style="font-size: 9pt;">'+ current_mails + '</li>');
+
+
 // Shade the currently clicked folder
 
 $("#side-nav ul li").click(function(){
@@ -42,23 +48,48 @@ $("#spam-link").click(function(){
 	$(".inbox, .sent, .trash").hide();
 });
 
+$("#start-experiment").click(function(){
+	closeOpenEmail();
+	$("#change-mail-type, .current-mail-type, #start-experiment").hide();
+});
 // Open a closed email
 
 $("#emails").on("click", ".email-contents", function(e){
 	$(this).addClass("open-email");
-	$("#reply-btn, #forward-btn, #close-btn").css("display", "inline-block");
-	$("#new-email-btn").hide();
+	$("#reply-btn, #forward-btn, #close-btn, #delete-btn-top").css("display", "inline-block");
+	$("#new-email-btn, #change-mail-type, .current-mail-type").hide();
 });
 
 // Close an open email
 
 function closeOpenEmail(){
 	$(".email-contents").removeClass("open-email");
-	$("#reply-btn, #forward-btn, #close-btn").hide();
+	$("#reply-btn, #forward-btn, #close-btn, #delete-btn-top").hide();
 	$("#new-email-btn").show();
+	if (current_mails == "smile") {
+		$(".smile-email").show();
+		$(".normal-email").hide();
+	}
+	else if (current_mails == "no_smile") {
+		$(".smile-email").hide();
+		$(".normal-email").show();
+	}
 }
 
 $("#close-btn").click(closeOpenEmail);
+
+// Change shown mail-type (mails with or without SMILE)
+let tmp = document.getElementById('top-nav-ul-id');
+$("#change-mail-type").click(function(){
+	if (current_mails == "smile") {
+		current_mails = "no_smile"
+	} else {
+		current_mails = "smile"
+	}
+	closeOpenEmail();
+	tmp.removeChild(tmp.lastElementChild);
+	$('.top-nav-ul').append('<li class="current-mail-type" style="font-size: 9pt;">'+ current_mails + '</li>');
+})
 
 // Delete email button
 
@@ -72,7 +103,7 @@ $("#emails").on("click", ".email .delete-btn", function(e){
 	}
 });
 
-// Undo email from trash button
+// restore email from trash button
 
 $("#emails").on("click", ".email .undo-btn", function(e){
 	e.stopPropagation();
@@ -129,6 +160,19 @@ $("#cancel-email-btn").click(function(){
 });
 
 /********** Reply to or Forward an Email **********/
+// Delete email button
+
+$("#delete-btn-top").click(function(e){
+	e.stopPropagation();
+	if ($(".open-email").parents(".email").hasClass("inbox") ) {
+		$(".open-email").parents(".email").hide().addClass("trash was-inbox").removeClass("inbox");
+	}
+	else if ( $(".open-email").parents(".email").hasClass("sent") ) {
+		$(".open-email").parents(".email").hide().addClass("trash was-sent").removeClass("sent");
+	}
+	closeOpenEmail();
+});
+
 
 // Reply email button
 
@@ -163,8 +207,8 @@ $("#send-reply-email-btn").click(function(){
 									'<li class="from"><span>From: </span>Ed</li>' +
 									'<li class="to"><span>To: </span>' + $("#reply-email-to input").val() + '</li>' +
 									'<li class="subject"><span>Subject: </span>' + $("#reply-email-subject input").val() + '</li>' +
-									'<li class="delete-btn">&times;</li>' +
-									'<li class="undo-btn">&#8630;</li>' +
+									'<li class="delete-btn">Delete</li>' +
+									'<li class="undo-btn">Restore</li>' +
 									'<li class="date">' + today + '</li>' +
 								'</ul>' +
 							'</li>' +
